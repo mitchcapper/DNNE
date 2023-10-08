@@ -75,8 +75,6 @@ enum failure_type
 {
     failure_load_runtime = 1,
     failure_load_export,
-    failure_get_current_app_domain_id,
-	failure_get_current_app_domain_id_backup_try
 };
 typedef void (DNNE_CALLTYPE* failure_fn)(enum failure_type type, int error_code);
 
