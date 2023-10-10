@@ -170,6 +170,8 @@ namespace
                 hr = oldRuntimeHost->GetDefaultDomain(&pUnk2);
                 IF_FAILURE_RETURN_OR_ABORT(ret, failure_load_runtime, hr, &_prepare_lock);
                 hr = runtimeHost->GetCurrentAppDomainId(&_appDomainId);
+                (void)oldRuntimeHost->Release();
+                (void)pUnk2->Release();
             }
             (void)runtimeInfo->Release(); //can't release earlier incase backup failure
 
